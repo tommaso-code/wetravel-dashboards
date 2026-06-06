@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WeTravel Trip Dashboards</title>
+<style>
+:root{--bg:#0f1620;--panel:#172230;--line:#2a3a4f;--txt:#e8eef5;--muted:#93a4b8;--accent:#3da9fc;--green:#2ecc71;--amber:#f5a623;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);padding:48px 32px;line-height:1.5;display:flex;flex-direction:column;align-items:center}
+h1{font-size:26px;font-weight:700;text-align:center}
+.sub{color:var(--muted);font-size:13px;margin:8px 0 36px;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,360px));gap:22px;justify-content:center;width:100%;max-width:780px}
+a.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;text-decoration:none;color:var(--txt);transition:.15s}
+a.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.card h2{font-size:18px;margin-bottom:14px}
+.row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0} .row .k{color:var(--muted)} .row .v{font-weight:700}
+.v.green{color:var(--green)} .v.amber{color:var(--amber)} .v.accent{color:var(--accent)}
+.open{margin-top:16px;color:var(--accent);font-size:13px;font-weight:600}
+.foot{color:var(--muted);font-size:12px;margin-top:36px;text-align:center}
+</style></head><body>
+<h1>WeTravel — Trip Revenue Dashboards</h1>
+<div class="sub">Snapshot pulled Jun 6, 2026 · Expected final revenue, collection status & traveler counts by trip</div>
+<div class="grid">
+<a class="card" href="GSE_WeTravel_Trip_Dashboard.html">
+  <h2>Global Sports Experiences</h2>
+  <div class="row"><span class="k">Expected final</span><span class="v accent">$1,305,918</span></div>
+  <div class="row"><span class="k">Collected</span><span class="v green">$630,770 (48%)</span></div>
+  <div class="row"><span class="k">Outstanding</span><span class="v amber">$663,008</span></div>
+  <div class="row"><span class="k">Travelers</span><span class="v">511 · 24 trips</span></div>
+  <div class="open">Open dashboard →</div>
+</a>
+<a class="card" href="SurfSelect_WeTravel_Trip_Dashboard.html">
+  <h2>Surf Select National</h2>
+  <div class="row"><span class="k">Expected final</span><span class="v accent">$1,235,934</span></div>
+  <div class="row"><span class="k">Collected</span><span class="v green">$859,256 (70%)</span></div>
+  <div class="row"><span class="k">Outstanding</span><span class="v amber">$376,678</span></div>
+  <div class="row"><span class="k">Travelers</span><span class="v">795 · 34 trips</span></div>
+  <div class="open">Open dashboard →</div>
+</a>
+</div>
+<div class="foot">Combined: $2.54M expected · $1.49M collected (59%) · $1.04M outstanding · 1,306 travelers across 58 trips</div>
+</body></html>

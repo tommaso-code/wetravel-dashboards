@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSE — WeTravel Trip Dashboard</title>
+<style>
+:root{--bg:#0f1620;--panel:#172230;--panel2:#1d2b3c;--line:#2a3a4f;--txt:#e8eef5;--muted:#93a4b8;--accent:#3da9fc;--green:#2ecc71;--amber:#f5a623;--chip:#223142;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);padding:28px 32px 60px;line-height:1.45}
+h1{font-size:22px;font-weight:700} .sub{color:var(--muted);font-size:13px;margin-top:4px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:24px 0 8px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.card .val{font-size:24px;font-weight:700;margin-top:6px} .card .note{color:var(--muted);font-size:12px;margin-top:4px}
+.val.green{color:var(--green)} .val.amber{color:var(--amber)} .val.accent{color:var(--accent)}
+.grid2{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-top:22px}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+.panel h2{font-size:14px;font-weight:600;margin-bottom:14px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;color:var(--muted);font-size:12px;align-items:center}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:middle}
+.donutwrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:right;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:240px}
+th{color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px;position:sticky;top:0;background:var(--panel)}
+tbody tr:hover{background:var(--panel2)} td.date{text-align:left;color:var(--muted)}
+.bar{height:7px;border-radius:4px;background:var(--chip);overflow:hidden;width:80px;display:inline-block;vertical-align:middle}
+.bar>i{display:block;height:100%;background:var(--green)} .pct{color:var(--muted);font-size:12px;margin-left:7px}
+.tablewrap{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:auto;max-height:680px;margin-top:14px}
+tfoot td{font-weight:700;border-top:2px solid var(--line);background:var(--panel);position:sticky;bottom:0}
+.chip{display:inline-block;background:var(--chip);border-radius:6px;padding:2px 8px;font-size:12px;color:var(--muted)}
+.foot{color:var(--muted);font-size:12px;margin-top:18px;line-height:1.6}
+.sect{margin-top:26px;font-size:14px;font-weight:600;color:var(--muted)}
+</style></head><body>
+<h1>Global Sports Experiences — Trip Revenue Dashboard</h1>
+<div class="sub">WeTravel · 49 upcoming trips · Snapshot pulled Jun 6, 2026</div>
+<div class="cards"><div class="card"><div class="label">Expected Final Revenue</div><div class="val accent">$1,305,918</div><div class="note">24 trips with bookings</div></div><div class="card"><div class="label">Collected to Date</div><div class="val green">$630,770</div><div class="note">48% of expected</div></div><div class="card"><div class="label">Outstanding</div><div class="val amber">$663,008</div><div class="note">still to collect</div></div><div class="card"><div class="label">Total Travelers</div><div class="val ">511</div><div class="note">across 44 USD trips</div></div><div class="card"><div class="label">Avg Revenue / Trip</div><div class="val ">$54,413</div><div class="note">booked trips only</div></div></div>
+<div class="grid2">
+<div class="panel"><h2>Expected Final Revenue by Trip (top 12, USD)</h2><svg viewBox="0 0 560 466" width="100%" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22.0" fill="#cdd9e6" font-size="11">Maryville College Italy and Fr…</text><rect x="210" y="5" width="269.0" height="26" fill="#2ecc71" rx="3"/><rect x="479.0" y="5" width="11.0" height="26" fill="#f5a623" rx="3"/><text x="496.0" y="22.0" fill="#93a4b8" font-size="10">$206,870</text><text x="0" y="60.0" fill="#cdd9e6" font-size="11">Chicago City Soccer Club - SCN…</text><rect x="210" y="43" width="153.8" height="26" fill="#2ecc71" rx="3"/><rect x="363.8" y="43" width="116.1" height="26" fill="#f5a623" rx="3"/><text x="486.0" y="60.0" fill="#93a4b8" font-size="10">$199,450</text><text x="0" y="98.0" fill="#cdd9e6" font-size="11">United Soccer - England & Wale…</text><rect x="210" y="81" width="47.9" height="26" fill="#2ecc71" rx="3"/><rect x="257.9" y="81" width="98.1" height="26" fill="#f5a623" rx="3"/><text x="362.0" y="98.0" fill="#93a4b8" font-size="10">$107,845</text><text x="0" y="136.0" fill="#cdd9e6" font-size="11">Bentonville Prodigy FC - SPAIN…</text><rect x="210" y="119" width="5.4" height="26" fill="#2ecc71" rx="3"/><rect x="215.4" y="119" width="118.6" height="26" fill="#f5a623" rx="3"/><text x="340.0" y="136.0" fill="#93a4b8" font-size="10">$91,630</text><text x="0" y="174.0" fill="#cdd9e6" font-size="11">Desert Empire Surf 2010 Girls …</text><rect x="210" y="157" width="87.4" height="26" fill="#2ecc71" rx="3"/><rect x="297.4" y="157" width="33.4" height="26" fill="#f5a623" rx="3"/><text x="336.7" y="174.0" fill="#93a4b8" font-size="10">$89,200</text><text x="0" y="212.0" fill="#cdd9e6" font-size="11">Mass Young Gunners Portugal Ex…</text><rect x="210" y="195" width="82.5" height="26" fill="#2ecc71" rx="3"/><rect x="292.5" y="195" width="19.6" height="26" fill="#f5a623" rx="3"/><text x="318.1" y="212.0" fill="#93a4b8" font-size="10">$75,450</text><text x="0" y="250.0" fill="#cdd9e6" font-size="11">Grinnell Soccer - England & Wa…</text><rect x="210" y="233" width="24.3" height="26" fill="#2ecc71" rx="3"/><rect x="234.3" y="233" width="64.2" height="26" fill="#f5a623" rx="3"/><text x="304.6" y="250.0" fill="#93a4b8" font-size="10">$65,430</text><text x="0" y="288.0" fill="#cdd9e6" font-size="11">KESA 2010 Girls to SCI Rome 20…</text><rect x="210" y="271" width="43.2" height="26" fill="#2ecc71" rx="3"/><rect x="253.2" y="271" width="43.2" height="26" fill="#f5a623" rx="3"/><text x="302.4" y="288.0" fill="#93a4b8" font-size="10">$63,840</text><text x="0" y="326.0" fill="#cdd9e6" font-size="11">High Country United and Appala…</text><rect x="210" y="309" width="7.4" height="26" fill="#2ecc71" rx="3"/><rect x="217.4" y="309" width="73.7" height="26" fill="#f5a623" rx="3"/><text x="297.2" y="326.0" fill="#93a4b8" font-size="10">$59,976</text><text x="0" y="364.0" fill="#cdd9e6" font-size="11">FC Westlake Spain Experience 2…</text><rect x="210" y="347" width="6.1" height="26" fill="#2ecc71" rx="3"/><rect x="216.1" y="347" width="67.0" height="26" fill="#f5a623" rx="3"/><text x="289.1" y="364.0" fill="#93a4b8" font-size="10">$53,982</text><text x="0" y="402.0" fill="#cdd9e6" font-size="11">Hybrid Futbol Academy- SCI Sal…</text><rect x="210" y="385" width="18.3" height="26" fill="#2ecc71" rx="3"/><rect x="228.3" y="385" width="48.7" height="26" fill="#f5a623" rx="3"/><text x="282.9" y="402.0" fill="#93a4b8" font-size="10">$49,460</text><text x="0" y="440.0" fill="#cdd9e6" font-size="11">San Diego Premier Training - I…</text><rect x="210" y="423" width="45.1" height="26" fill="#2ecc71" rx="3"/><rect x="255.1" y="423" width="20.9" height="26" fill="#f5a623" rx="3"/><text x="282.1" y="440.0" fill="#93a4b8" font-size="10">$48,805</text></svg>
+<div class="legend"><span><i style="background:#2ecc71"></i>Collected</span><span><i style="background:#f5a623"></i>Outstanding + processing</span></div></div>
+<div class="panel"><h2>Collection Status (USD)</h2><div class="donutwrap"><svg viewBox="0 0 180 180" width="180" height="180" xmlns="http://www.w3.org/2000/svg"><path d="M 90 90 L 90.0 10.0 A 80 80 0 0 1 98.5 169.5 Z" fill="#2ecc71"/><path d="M 90 90 L 98.5 169.5 A 80 80 0 0 1 93.9 169.9 Z" fill="#3da9fc"/><path d="M 90 90 L 93.9 169.9 A 80 80 0 1 1 90.0 10.0 Z" fill="#f5a623"/><circle cx="90" cy="90" r="48" fill="#172230"/><text x="90" y="86" text-anchor="middle" fill="#e8eef5" font-size="20" font-weight="700">48%</text><text x="90" y="104" text-anchor="middle" fill="#93a4b8" font-size="11">collected</text></svg>
+<div class="legend"><span><i style="background:#2ecc71"></i>Collected $630,770</span><span><i style="background:#3da9fc"></i>Processing $12,140</span><span><i style="background:#f5a623"></i>Outstanding $663,008</span></div></div></div>
+</div>
+<div class="sect">All trips — sorted by departure date</div>
+<div class="tablewrap"><table>
+<thead><tr><th>Trip</th><th>Departure</th><th>Travelers</th><th>Capacity</th><th>Expected Final</th><th>Collected</th><th>Processing</th><th>Outstanding</th><th>% Collected</th></tr></thead>
+<tbody><tr>
+<td>Hybrid Futbol Academy x IDA Valencia Experience</td><td class="date">Jun 21, 2026</td><td>0</td><td>100</td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Mass Young Gunners Portugal Experience</td><td class="date">Jun 24, 2026</td><td>22</td><td>100</td>
+<td>$75,450</td><td>$60,950</td><td>—</td><td>$14,500</td>
+<td><span class="bar"><i style="width:81%"></i></span><span class="pct">81%</span></td></tr>
+<tr>
+<td>Manchester City Football Performance Program</td><td class="date">Jun 28, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Manchester City Football Development Program</td><td class="date">Jun 28, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Manchester City Football Language Program</td><td class="date">Jun 28, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Maryville College Italy and France Experience</td><td class="date">Jul 22, 2026</td><td>51</td><td>100</td>
+<td>$206,870</td><td>$198,710</td><td>—</td><td>$8,160</td>
+<td><span class="bar"><i style="width:96%"></i></span><span class="pct">96%</span></td></tr>
+<tr>
+<td>Desert Empire Surf 2010 Girls to SCNI 2026</td><td class="date">Jul 24, 2026</td><td>41</td><td>50</td>
+<td>$89,200</td><td>$64,557</td><td>—</td><td>$24,643</td>
+<td><span class="bar"><i style="width:72%"></i></span><span class="pct">72%</span></td></tr>
+<tr>
+<td>Chicago City Soccer Club - SCNI 2026</td><td class="date">Jul 25, 2026</td><td>80</td><td>90</td>
+<td>$199,450</td><td>$113,665</td><td>—</td><td>$85,785</td>
+<td><span class="bar"><i style="width:57%"></i></span><span class="pct">57%</span></td></tr>
+<tr>
+<td>Next Gen Man City: The Business of Football Program</td><td class="date">Jul 26, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Southampton Player Development Experience</td><td class="date">Aug 3, 2026</td><td>3</td><td>100</td>
+<td>$7,650</td><td>$5,088</td><td>—</td><td>$2,562</td>
+<td><span class="bar"><i style="width:67%"></i></span><span class="pct">67%</span></td></tr>
+<tr>
+<td>San Diego Premier Training - IDA Brazil Experience</td><td class="date">Aug 9, 2026</td><td>28</td><td>100</td>
+<td>$48,805</td><td>$33,335</td><td>$6,870</td><td>$8,600</td>
+<td><span class="bar"><i style="width:68%"></i></span><span class="pct">68%</span></td></tr>
+<tr>
+<td>New England Surf 2014G - Royal Pre Season Cup</td><td class="date">Aug 10, 2026</td><td>0</td><td>54</td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>FC United Royal Pre Season Cup U14 and U16 Girls & Boys</td><td class="date">Aug 10, 2026</td><td>0</td><td>54</td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Bulls Rush FC - Thanksgiving Experience 2026</td><td class="date">Nov 20, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Vaughan SC 2009 Girls - SCI Salou 2026</td><td class="date">Nov 21, 2026</td><td>12</td><td><span class="chip">none</span></td>
+<td>$29,240</td><td>$8,862</td><td>—</td><td>$20,378</td>
+<td><span class="bar"><i style="width:30%"></i></span><span class="pct">30%</span></td></tr>
+<tr>
+<td>Vaughan SC 2010 Girls - SCI Salou 2026</td><td class="date">Nov 21, 2026</td><td>12</td><td><span class="chip">none</span></td>
+<td>$28,740</td><td>$7,429</td><td>—</td><td>$21,311</td>
+<td><span class="bar"><i style="width:26%"></i></span><span class="pct">26%</span></td></tr>
+<tr>
+<td>MATCH FIT SURF - ENGLAND THANKSGIVING 2026</td><td class="date">Nov 22, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Sigma X FC - SCI Salou, 2026 (Boys U13)</td><td class="date">Nov 22, 2026</td><td>0</td><td>100</td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Iowa Rush - SCI Salou 2026</td><td class="date">Nov 23, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Hawaii SURF - SCI Salou 2027</td><td class="date">Nov 23, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Si Futbol Xcellence- SCI Salou Boys and Girls U12 and U14</td><td class="date">Nov 23, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>ULTIMATE HERITAGE FOOTBALL EXPERIENCE - THANKSGIVING 2026</td><td class="date">Nov 23, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Next Level Training - SCI Salou Boys 2016/2017 and Girls 2015/16</td><td class="date">Nov 23, 2026</td><td>6</td><td><span class="chip">none</span></td>
+<td>$13,170</td><td>$1,500</td><td>—</td><td>$11,670</td>
+<td><span class="bar"><i style="width:11%"></i></span><span class="pct">11%</span></td></tr>
+<tr>
+<td>Hybrid Futbol Academy- SCI Salou 2026</td><td class="date">Nov 23, 2026</td><td>27</td><td>100</td>
+<td>$49,460</td><td>$13,485</td><td>$4,290</td><td>$31,685</td>
+<td><span class="bar"><i style="width:27%"></i></span><span class="pct">27%</span></td></tr>
+<tr>
+<td>Tigres Elite FC Guests- SCI Salou 2026</td><td class="date">Nov 23, 2026</td><td>1</td><td><span class="chip">none</span></td>
+<td>$2,300</td><td>$850</td><td>—</td><td>$1,450</td>
+<td><span class="bar"><i style="width:37%"></i></span><span class="pct">37%</span></td></tr>
+<tr>
+<td>San Diego Surf- SCI Salou 2026</td><td class="date">Nov 23, 2026</td><td>2</td><td><span class="chip">none</span></td>
+<td>$3,790</td><td>$500</td><td>—</td><td>$3,290</td>
+<td><span class="bar"><i style="width:13%"></i></span><span class="pct">13%</span></td></tr>
+<tr>
+<td>Kootenay United Football Academy - SCI Salou 2027</td><td class="date">Nov 23, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Washington Premier FC to SCI Salou 2026</td><td class="date">Nov 23, 2026</td><td>4</td><td><span class="chip">none</span></td>
+<td>$7,980</td><td>$1,000</td><td>—</td><td>$6,980</td>
+<td><span class="bar"><i style="width:13%"></i></span><span class="pct">13%</span></td></tr>
+<tr>
+<td>GSE Elite 2014B - SCI Salou 2026</td><td class="date">Nov 23, 2026</td><td>10</td><td><span class="chip">none</span></td>
+<td>$16,960</td><td>$6,560</td><td>—</td><td>$10,400</td>
+<td><span class="bar"><i style="width:39%"></i></span><span class="pct">39%</span></td></tr>
+<tr>
+<td>FC United SCI Salou Boys and Girls U12, U14 and U16</td><td class="date">Nov 23, 2026</td><td>7</td><td>54</td>
+<td>$16,600</td><td>$1,750</td><td>—</td><td>$14,850</td>
+<td><span class="bar"><i style="width:11%"></i></span><span class="pct">11%</span></td></tr>
+<tr>
+<td>MONARCH SOCCER ACADEMY - U12 AND U15 BOYS TO SCI SALOU</td><td class="date">Nov 23, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>MONARCH SOCCER ALL STARS - U16 BOYS TO SCI SALOU</td><td class="date">Nov 23, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Pacific Northwest Soccer Club U14 and U15 Boys - SCI Salou 2027</td><td class="date">Nov 23, 2026</td><td>7</td><td><span class="chip">none</span></td>
+<td>$17,450</td><td>$2,750</td><td>—</td><td>$14,700</td>
+<td><span class="bar"><i style="width:16%"></i></span><span class="pct">16%</span></td></tr>
+<tr>
+<td>Manitoba Rush - SCI Salou 2026</td><td class="date">Nov 23, 2026</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Group Flight - Los Angeles to San Diego</td><td class="date">Dec 2, 2026</td><td>0</td><td>20</td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>GSE PREMIER LEAGUE FAN EXPERIENCE - DECEMBER 2026</td><td class="date">Dec 4, 2026</td><td>0</td><td>50</td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Global Sports Experience European Giveway</td><td class="date">Jan 1, 2027</td><td>0</td><td>3000</td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Next Level Training 2012/2013 Girls Italy Experience</td><td class="date">Feb 13, 2027</td><td>0</td><td>60</td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>Grinnell Soccer - England & Wales Experience 2027</td><td class="date">Mar 12, 2027</td><td>26</td><td>100</td>
+<td>$65,430</td><td>$17,980</td><td>—</td><td>$47,450</td>
+<td><span class="bar"><i style="width:27%"></i></span><span class="pct">27%</span></td></tr>
+<tr>
+<td>FC Westlake Spain Experience 2027</td><td class="date">Mar 13, 2027</td><td>18</td><td><span class="chip">none</span></td>
+<td>$53,982</td><td>$4,500</td><td>—</td><td>$49,482</td>
+<td><span class="bar"><i style="width:8%"></i></span><span class="pct">8%</span></td></tr>
+<tr>
+<td>KESA 2010 Girls to SCI Rome 2027</td><td class="date">Mar 22, 2027</td><td>32</td><td>60</td>
+<td>$63,840</td><td>$31,921</td><td>—</td><td>$31,919</td>
+<td><span class="bar"><i style="width:50%"></i></span><span class="pct">50%</span></td></tr>
+<tr>
+<td>FC Golden State - SCI Rome 2027</td><td class="date">Mar 22, 2027</td><td>0</td><td><span class="chip">none</span></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>High Country United and Appalachian Academy Spain Experience 2027</td><td class="date">Mar 27, 2027</td><td>24</td><td><span class="chip">none</span></td>
+<td>$59,976</td><td>$5,500</td><td>$500</td><td>$53,976</td>
+<td><span class="bar"><i style="width:9%"></i></span><span class="pct">9%</span></td></tr>
+<tr>
+<td>Inter Halifax SC, Nova Scotia - England & Wales Experience 2027</td><td class="date">Apr 2, 2027</td><td>19</td><td>100</td>
+<td>$47,405</td><td>$10,291</td><td>$200</td><td>$36,914</td>
+<td><span class="bar"><i style="width:22%"></i></span><span class="pct">22%</span></td></tr>
+<tr>
+<td>IDA Valencia Experience - Penryn School</td><td class="date">Jun 28, 2027</td><td>6</td><td>100</td>
+<td>€10,710</td><td>€1,500</td><td>—</td><td>€9,210</td>
+<td><span class="bar"><i style="width:14%"></i></span><span class="pct">14%</span></td></tr>
+<tr>
+<td>Bentonville Prodigy FC - SPAIN Experience 2027</td><td class="date">Jul 9, 2027</td><td>34</td><td>100</td>
+<td>$91,630</td><td>$4,023</td><td>—</td><td>$87,607</td>
+<td><span class="bar"><i style="width:4%"></i></span><span class="pct">4%</span></td></tr>
+<tr>
+<td>Sporting City Girls - Italian Experience 2027</td><td class="date">Jul 9, 2027</td><td>0</td><td>100</td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+<td><span class="bar"><i style="width:0%"></i></span><span class="pct">—</span></td></tr>
+<tr>
+<td>United Soccer - England & Wales Experience 2027</td><td class="date">Jul 30, 2027</td><td>44</td><td>100</td>
+<td>$107,845</td><td>$35,385</td><td>$280</td><td>$72,180</td>
+<td><span class="bar"><i style="width:33%"></i></span><span class="pct">33%</span></td></tr>
+<tr>
+<td>Penn United SC - SPAIN Experience 2027</td><td class="date">Aug 6, 2027</td><td>1</td><td>100</td>
+<td>$2,695</td><td>$180</td><td>—</td><td>$2,515</td>
+<td><span class="bar"><i style="width:7%"></i></span><span class="pct">7%</span></td></tr>
+</tbody>
+<tfoot><tr><td>USD totals (44)</td><td></td><td>511</td><td></td><td>$1,305,918</td><td>$630,770</td><td>$12,140</td><td>$663,008</td><td>48%</td></tr></tfoot>
+</table></div>
+<div class="foot"><b>Definitions.</b> <b>Expected Final</b> = full contract value of all bookings (paid + processing + outstanding), per WeTravel's "Expected amount." <b>Collected</b> = amount paid. <b>Processing</b> = WeTravel "Amount pending." <b>Outstanding</b> = Expected − Collected − Processing.<br>
+KPI cards and totals reflect <b>USD trips only</b>. One trip is EUR (IDA Valencia – Penryn School) and four Manchester City programs are GBP with zero bookings; shown in the table in native currency but excluded from USD totals. Capacity "none" = no cap set in WeTravel.</div>
+</body></html>
