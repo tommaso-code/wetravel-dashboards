@@ -1,41 +1,47 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WeTravel Trip Dashboards</title>
+<title>WeTravel Revenue Dashboards</title>
 <style>
-:root{--bg:#0f1620;--panel:#172230;--line:#2a3a4f;--txt:#e8eef5;--muted:#93a4b8;--accent:#3da9fc;--green:#2ecc71;--amber:#f5a623;}
+:root{--bg:#0f1620;--panel:#172230;--panel2:#1d2b3c;--line:#2a3a4f;--txt:#e8eef5;--muted:#93a4b8;--accent:#3da9fc;--green:#2ecc71;--amber:#f5a623}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);padding:48px 32px;line-height:1.5;display:flex;flex-direction:column;align-items:center}
-h1{font-size:26px;font-weight:700;text-align:center}
-.sub{color:var(--muted);font-size:13px;margin:8px 0 36px;text-align:center}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,360px));gap:22px;justify-content:center;width:100%;max-width:780px}
-a.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;text-decoration:none;color:var(--txt);transition:.15s}
-a.card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.card h2{font-size:18px;margin-bottom:14px}
-.row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--line)}
-.row:last-child{border:0} .row .k{color:var(--muted)} .row .v{font-weight:700}
-.v.green{color:var(--green)} .v.amber{color:var(--amber)} .v.accent{color:var(--accent)}
-.open{margin-top:16px;color:var(--accent);font-size:13px;font-weight:600}
-.foot{color:var(--muted);font-size:12px;margin-top:36px;text-align:center}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);padding:40px 32px 60px;line-height:1.45}
+h1{font-size:24px;font-weight:700} .sub{color:var(--muted);font-size:13px;margin-top:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:26px}
+.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px;text-decoration:none;color:var(--txt);transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.brand{font-size:18px;font-weight:700;margin-bottom:16px}
+.kpis{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.kpi{display:flex;flex-direction:column} .kpi .lbl{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.kpi .v{font-size:19px;font-weight:700;margin-top:4px} .kpi .v small{font-size:12px;font-weight:600;color:var(--muted)}
+.v.green{color:var(--green)} .v.amber{color:var(--amber)}
+.meta{color:var(--muted);font-size:13px;margin-top:16px}
+.open{color:var(--accent);font-size:13px;font-weight:600;margin-top:10px}
+.foot{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.7}
+.foot b{color:var(--txt)}
 </style></head><body>
-<h1>WeTravel — Trip Revenue Dashboards</h1>
-<div class="sub">Snapshot pulled Jul 2, 2026 · Expected final revenue, collection status & traveler counts by trip</div>
-<div class="grid">
-<a class="card" href="GSE_WeTravel_Trip_Dashboard.html">
-<h2>Global Sports Experiences</h2>
-<div class="row"><span class="k">Expected final</span><span class="v accent">$1,654,168</span></div>
-<div class="row"><span class="k">Collected</span><span class="v green">$761,852 (46%)</span></div>
-<div class="row"><span class="k">Outstanding</span><span class="v amber">$865,901</span></div>
-<div class="row"><span class="k">Travelers</span><span class="v">666 · 57 trips</span></div>
-<div class="open">Open dashboard →</div>
-</a>
-<a class="card" href="SurfSelect_WeTravel_Trip_Dashboard.html">
-<h2>Surf Select National</h2>
-<div class="row"><span class="k">Expected final</span><span class="v accent">$1,203,285</span></div>
-<div class="row"><span class="k">Collected</span><span class="v green">$1,043,298 (87%)</span></div>
-<div class="row"><span class="k">Outstanding</span><span class="v amber">$123,738</span></div>
-<div class="row"><span class="k">Travelers</span><span class="v">709 · 27 trips</span></div>
-<div class="open">Open dashboard →</div>
-</a>
+<h1>WeTravel Revenue Dashboards</h1>
+<div class="sub">Upcoming trips · USD KPIs · Snapshot pulled Jul 4, 2026</div>
+<div class="cards">
+    <a class="card" href="GSE_WeTravel_Trip_Dashboard.html">
+      <div class="brand">Global Sports Experiences</div>
+      <div class="kpis">
+        <div class="kpi"><span class="lbl">Expected</span><span class="v">$1,683,492</span></div>
+        <div class="kpi"><span class="lbl">Collected</span><span class="v green">$776,722 <small>(46%)</small></span></div>
+        <div class="kpi"><span class="lbl">Outstanding</span><span class="v amber">$888,856</span></div>
+      </div>
+      <div class="meta">679 travelers · 57 upcoming trips</div>
+      <div class="open">Open dashboard →</div>
+    </a>
+    <a class="card" href="SurfSelect_WeTravel_Trip_Dashboard.html">
+      <div class="brand">Surf Select National</div>
+      <div class="kpis">
+        <div class="kpi"><span class="lbl">Expected</span><span class="v">$1,203,285</span></div>
+        <div class="kpi"><span class="lbl">Collected</span><span class="v green">$1,052,445 <small>(87%)</small></span></div>
+        <div class="kpi"><span class="lbl">Outstanding</span><span class="v amber">$118,408</span></div>
+      </div>
+      <div class="meta">709 travelers · 27 upcoming trips</div>
+      <div class="open">Open dashboard →</div>
+    </a>
 </div>
-<div class="foot">Combined: $2.86M expected · $1.81M collected (63%) · $0.99M outstanding · 1,375 travelers across 84 trips</div>
+<div class="foot"><b>Combined upcoming totals:</b> $2.89M expected · $1.83M collected (63%) · $1.01M outstanding · 1,388 travelers across 84 trips</div>
 </body></html>
